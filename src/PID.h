@@ -6,16 +6,18 @@ public:
   /*
   * Errors
   */
-  double p_error;
-  double i_error;
-  double d_error;
+  double error;
 
   /*
   * Coefficients
-  */ 
-  double Kp;
-  double Ki;
-  double Kd;
+  */
+  double Kp_;
+  double Ki_;
+  double Kd_;
+
+  double diff_cte;
+  double prev_cte;
+  double int_cte;
 
   /*
   * Constructor
@@ -33,9 +35,9 @@ public:
   void Init(double Kp, double Ki, double Kd);
 
   /*
-  * Update the PID error variables given cross track error.
+  * Calculate the steering control given the cross track error.
   */
-  void UpdateError(double cte);
+  double Control(double cte);
 
   /*
   * Calculate the total PID error.
