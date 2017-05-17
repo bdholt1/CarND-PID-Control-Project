@@ -2,6 +2,15 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Reflection
+
+I started exactly the same as the lessons: by introducing proportional control. It was very clear and obvious that the proportional control caused the vehicle to turn in the correct direction (to minimise the cross-track error) but the overshoot was so severe that it left the track every time after overcompensating.
+
+Secondly I started to introduce derivative control, starting with a value the same as the proportional component.  I progressively increased it until it dampened the effect of the P control and I could steer around the track.  Then I tried increasing the throttle to see if I could increase the maximum speed and found that at higher speeds the P control was causing overcompensation so I pushed D up further to balance that out, managing to hit around 55Mph around the track.
+
+Finally I tried to introduce I control, but there was no observable bias, so any attempt to do so caused the vehicle to leave the track pretty quickly.
+
+---
 
 ## Dependencies
 
